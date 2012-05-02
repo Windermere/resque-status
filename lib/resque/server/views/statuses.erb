@@ -25,7 +25,7 @@
     <tr>
       <td><a href="<%= u(:statuses) %>/<%= status.uuid %>"><%= status.uuid %></a></td>
       <td>
-        <% unless status.name.blank? %>
+        <% unless status.name.to_s.length == 0 %>
             <a class='status-info' href="#"> <%= "#{status.name[0, 30]}  #{"..." unless status.name.length <= 30}  #{status.name[-5,5] unless status.name.length <= 30}" %>  <span><%= status.name %></span></a>
         <% end %>
       </td>
@@ -36,7 +36,7 @@
         <div class="progress-pct"><%= status.pct_complete ? "#{status.pct_complete}%" : '' %></div>
       </td>
       <td>
-        <% unless status.message.blank? %>
+        <% unless status.message.to_s.length == 0 %>
             <a class='status-info' href="#"> <%= "#{status.message[0,60]} #{"..." unless status.message.length <= 60} #{status.message[-5,5] unless status.message.length <= 60}"  %> <span><%= status.message %></span></a>
         <% end %>
       </td>
