@@ -51,18 +51,18 @@ Gem::Specification.new do |s|
     if Gem::Version.new(Gem::VERSION) >= Gem::Version.new('1.2.0') then
       s.add_runtime_dependency(%q<redisk>, [">= 0.2.1"])
       s.add_runtime_dependency(%q<resque>, ["~> 1.19"])
-      s.add_runtime_dependency(%q<uuid>, ["~> 2.3.5"])
+      s.add_runtime_dependency(%q<uuidtools>, ["~> 2.1.2"])
       s.add_development_dependency(%q<jeweler>, [">= 0"])
     else
       s.add_dependency(%q<redisk>, [">= 0.2.1"])
       s.add_dependency(%q<resque>, ["~> 1.19"])
-      s.add_dependency(%q<uuid>, ["~> 2.3.5"])
+      s.add_dependency(%q<uuidtools>, ["~> 2.1.2"])
       s.add_dependency(%q<jeweler>, [">= 0"])
     end
   else
     s.add_dependency(%q<redisk>, [">= 0.2.1"])
     s.add_dependency(%q<resque>, ["~> 1.19"])
-    s.add_dependency(%q<uuid>, ["~> 2.3.5"])
+    s.add_dependency(%q<uuidtools>, ["~> 2.1.2"])
     s.add_dependency(%q<jeweler>, [">= 0"])
   end
 end
