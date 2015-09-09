@@ -2,7 +2,7 @@ source :rubygems
 
 gem 'redisk', '>= 0.2.1'
 gem 'resque', '~>1.19'
-gem 'uuid', '~>2.3'
+gem 'uuidtools', '~> 2.1.2'
 
 group :test do
   gem 'mocha', '~>0.9.8'

@@ -26,7 +26,7 @@
       <td><a href="<%= u(:statuses) %>/<%= status.uuid %>"><%= status.uuid %></a></td>
       <td>
         <% unless status.name.to_s.length == 0 %>
-            <a class='status-info' href="#"> <%= "#{status.name[0, 30]}  #{"..." unless status.name.length <= 30}  #{status.name[-5,5] unless status.name.length <= 30}" %>  <span><%= status.name %></span></a>
+            <a class='status-info' href="#"> <%= "#{status.name[0, 30]}  #{"..." unless status.name.length <= 30}  #{status.name[-5,5] unless status.name.length <= 30}" %></a>
         <% end %>
       </td>
       <td class="status status-<%= status.status %>"><%= status.status %></td>

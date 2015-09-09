@@ -10,6 +10,13 @@
   </div>
   <div class="status-message"><%= @status.message %></div>
   <div class="status-time"><%= @status.time? ? @status.time : 'Not started' %></div>
+
+  <% begin %>
+      <% Resque::Plugins::Status::Hash.logger(@status.uuid).io.readlines.each  do |log| %>
+          <div class="status-log"><%= log %></div>
+      <% end %>
+  <% rescue => e %>
+  <% end %>
 </div>
 
 <script type="text/javascript" charset="utf-8">
