@@ -53,7 +53,6 @@ Gem::Specification.new do |s|
       s.add_runtime_dependency(%q<resque>, ["~> 1.19"])
       s.add_runtime_dependency(%q<uuidtools>, ["~> 2.1.2"])
       s.add_development_dependency(%q<jeweler>, [">= 0"])
-      s.add_development_dependency 'geminabox'
     else
       s.add_dependency(%q<redisk>, [">= 0.2.1"])
       s.add_dependency(%q<resque>, ["~> 1.19"])
