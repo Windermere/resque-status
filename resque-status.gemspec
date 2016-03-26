@@ -65,5 +65,6 @@ Gem::Specification.new do |s|
     s.add_dependency(%q<uuidtools>, ["~> 2.1.2"])
     s.add_dependency(%q<jeweler>, [">= 0"])
   end
+  s.add_development_dependency 'geminabox'
 end
 
