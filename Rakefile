@@ -5,6 +5,18 @@ require 'rake'
 require 'resque-status'
 require 'resque/tasks'
 
+require "bundler/gem_tasks"
+
+module Bundler
+  class GemHelper
+    def rubygem_push(path)
+      gem_server_url = ENV['GEM_SERVER_URL']
+      sh("gem inabox '#{path}' --host #{gem_server_url}")
+      Bundler.ui.confirm "Pushed #{name} #{version} to #{gem_server_url}"
+    end
+  end
+end
+
 begin
   require 'jeweler'
   Jeweler::Tasks.new do |gem|
@@ -47,8 +59,15 @@ task :test
 
 task :default => :test
 
-require 'rake/rdoctask'
-Rake::RDocTask.new do |rdoc|
+begin
+  require 'rdoc/task'
+rescue LoadError
+  require 'rdoc/rdoc'
+  require 'rake/rdoctask'
+  RDoc::Task = Rake::RDocTask
+end
+
+RDoc::Task.new(:rdoc) do |rdoc|
   version = File.exist?('VERSION') ? File.read('VERSION') : ""
 
   rdoc.rdoc_dir = 'rdoc'
