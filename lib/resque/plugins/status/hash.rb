@@ -149,8 +149,8 @@ module Resque
         end
 
         def self.generate_uuid
-          require 'uuidtools' unless defined?(UUIDTools)
-          UUIDTools::UUID.timestamp_create.to_s.gsub('-','')
+          require 'securerandom' unless defined?(SecureRandom)
+          SecureRandom.uuid.to_s.gsub('-','')
         end
 
         def self.hash_accessor(name, options = {})
